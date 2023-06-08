@@ -35,7 +35,7 @@ workflow idmWorkflow {
             install_python_script = "./scripts/sh/install_python.sh",
             install_model_script = "./scripts/sh/install_model.sh",
             run_model_script = "./scripts/sh/run_model.sh",
-            git_repository_url = "https://github.com/midas-network/cknowledge-covid-model.git",
+            git_repository_url = "https://github.com/midas-network/bayesian-covid-model-demo.git",
 	        state = "PA",
 	        start_date = "2020-03-05",
 	        end_date = "2020-03-07"
