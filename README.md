@@ -2,17 +2,26 @@
 
 This project demostrates running the Bayesian model using Cromwell, Python, and Docker.
 
+## Pre-requisites:
+ 
+ 1. JAVA must be installed and be a minimum version of 11.
+ 2. Docker must also be installed.
+Please note: The cromwell workflow script will check for these requirements and stop execution if they are not met.
+
+
 ## To execute:
  
- 1. download https://github.com/broadinstitute/cromwell/releases/download/84/cromwell-84.jar to the project directory
- 2. docker pull python
- 3. edit idmWorkflow.wdl using a text editor to specify the run paramters (lines 39-42)
+ 1. Edit idmWorkflow.wdl using a text editor to specify the run paramters (lines 36-38), then save
 ~~~
 state = "PA",
 start_date = "2020-03-05",
 end_date = "2020-03-07"
 ~~~
- 4. java -jar cromwell-84.jar run idmWorkflow.wdl
+ 2. From the command line execute the Cromwell workflow
+~~~
+./cromwell_workflow.sh
+~~~
+
 
 ## Results:
 

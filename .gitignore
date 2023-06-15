@@ -4,7 +4,6 @@ cromwell-workflow-logs/
 
 .DS_Store
 cromwell-84.jar
-test.sh
-test2.sh
+test*.sh
 change_java.sh
 

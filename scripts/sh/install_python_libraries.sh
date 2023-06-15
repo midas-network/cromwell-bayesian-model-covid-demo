@@ -1,8 +1,5 @@
 #!/bin/bash
 
-apt-get -y install python
-apt-get -y install python-pip
-
 wget https://pypi.tuna.tsinghua.edu.cn/packages/71/42/5a97178a0e48d3647567917e72585c44d4d1cb521753af3b979e1c21e821/jaxlib-0.1.62-cp36-none-manylinux2010_x86_64.whl#sha256=8ae71b54b86f140a840b8c097b015e6fde5c323cc7b2ea716b2707a66370b01e
 pip install jaxlib-0.1.62-cp36-none-manylinux2010_x86_64.whl 
 
