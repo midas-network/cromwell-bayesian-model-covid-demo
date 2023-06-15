@@ -6,6 +6,7 @@ This project demostrates running the Bayesian model using Cromwell, Python, and 
  
  1. JAVA must be installed and be a minimum version of 11.
  2. Docker must also be installed.
+
 Please note: The cromwell workflow script will check for these requirements and stop execution if they are not met.
 
 
