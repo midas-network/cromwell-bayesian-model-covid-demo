@@ -1,4 +1,4 @@
-# cromwell-epispot
+# cromwell-bayesian-model-covid
 
 This project demostrates running a Bayesian Covid model using Cromwell, Python, and Docker.
 
