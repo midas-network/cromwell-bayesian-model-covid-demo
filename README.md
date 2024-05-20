@@ -1,6 +1,6 @@
 # cromwell-epispot
 
-This project demostrates running Epispot using Cromwell, Python, and Docker.
+This project demostrates running a Bayesian Covid model using Cromwell, Python, and Docker.
 
 ## Cromwell:
 [Cromwell](https://github.com/broadinstitute/cromwell) is an open-source Workflow Management System for bioinformatics.
