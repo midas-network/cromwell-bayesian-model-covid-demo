@@ -1,7 +1,9 @@
-
+cromwell*.jar
 cromwell-executions/
 cromwell-workflow-logs/
+womtool*.*
 results/
+model_output/
 
 .DS_Store
 cromwell-84.jar

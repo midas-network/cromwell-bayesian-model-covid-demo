@@ -16,6 +16,6 @@ git_repository_name
 git clone "$git_repository_url"
 
 cd $(git_repository_name)
-pip install -e .
+#pip install -e .
 cd $CWD
  
