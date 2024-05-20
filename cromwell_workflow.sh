@@ -83,42 +83,51 @@ fi
 echo "Pulling Docker library ..."
 docker pull python
 
-checksum="faf6e7996e1c2e9e4e71f2256f984e3a7782df9377fd2ccd32546f622d05cb2b  cromwell-84.jar"
-echo "Looking for cromwell-84.jar..."
-if [[ -f "cromwell-84.jar" ]]; then
-  echo "  cromwell-84.jar found."
+checksum="f9581657e0484c90b5ead0f699d8d791f94e3cabe87d8cb0c5bfb21d1fdb6592  cromwell-86.jar"
+echo "Looking for cromwell-86.jar..."
+if [[ -f "cromwell-86.jar" ]]; then
+  echo "  cromwell-86.jar found."
 else
-  echo "  cromwell-84.jar not found..."
+  echo "  cromwell-86.jar not found..."
   if which wget >/dev/null; then
-    echo "  Downloading cromwell-84.jar via wget."
-    wget -q --show-progress https://github.com/broadinstitute/cromwell/releases/download/84/cromwell-84.jar
+    echo "  Downloading cromwell-86.jar via wget."
+    wget -q --show-progress https://github.com/broadinstitute/cromwell/releases/download/86/cromwell-86.jar
  else
-    echo "  Error: Cannot download cromwell-84.jar, wget is not available."
+    echo "  Error: Cannot download cromwell-86.jar, wget is not available."
     echo "    Please install wget or download the following file to this directory:"
-    echo "      https://github.com/broadinstitute/cromwell/releases/download/84/cromwell-84.jar "
-    echo "    Rerun this script once you've either installed wget or downloaded cromwell-84.jar"
+    echo "      https://github.com/broadinstitute/cromwell/releases/download/86/cromwell-86.jar "
+    echo "    Rerun this script once you've either installed wget or downloaded cromwell-86.jar"
     exit 1
   fi
 fi
 
-echo "Verifying cromwell-84.jar..."
-if [[ $(shasum -a 256 cromwell-84.jar) = $checksum ]]; then
-  echo "  cromwell-84.jar verified!";
+echo "Verifying cromwell-86.jar..."
+if [[ $(shasum -a 256 cromwell-86.jar) = $checksum ]]; then
+  echo "  cromwell-86.jar verified!";
 else
-  echo "  Error: Couldn't verify cromwell-84.jar, please delete the .jar and run this script again."
+  echo "  Error: Couldn't verify cromwell-86.jar, please delete the .jar and run this script again."
+  exit 1
+fi
+
+echo "Verifying model definition file provided as modelWorkflow_inputs.json..."
+if [[ -f modelWorkflow_inputs.json ]]; then
+  echo "  modelWorkflow_inputs.json found."
+else
+  echo "  modelWorkflow_inputs.json not found..."
+  echo "    Please specify the model configuation yml and "
+  echo "    the model executable in the modelWorkflow_inputs.json file."
   exit 1
 fi
 
 echo "Running Cromwell workflow ..."
-java -Dconfig.file=cromwell_config.conf -jar cromwell-84.jar run idmWorkflow.wdl
-#java -Dconfig.file=/Users/jbs82/Documents/dev/cromwell-baysian-model-covid/app.conf -jar cromwell-84.jar run idmWorkflow.wdl
+java -Dconfig.file=cromwell_config.conf -jar cromwell-86.jar run bayesian.wdl --inputs modelWorkflow_inputs.json
 
 echo ""
 echo "******************************************************************************"
 echo "*       MIDAS Cromwell / Bayesian Model Demo                                 *"
 echo "*                                                                            *"
 echo "* Cromwell workflow has completed.  Results can be found at:                 *"
-echo "$(pwd)/results"
+echo "$(pwd)/model_output"
 echo "*                                                                            *"
 echo "******************************************************************************"
 echo ""

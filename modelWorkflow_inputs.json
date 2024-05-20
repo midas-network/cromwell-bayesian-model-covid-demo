@@ -1,0 +1,18 @@
+{
+  "modelWorkflow.name_of_this_model_run": "bayesian",
+  "modelWorkflow.state_array": ["GA"],
+  "modelWorkflow.start_date_array": ["2020-03-05"],
+  "modelWorkflow.end_date_array": ["2020-03-07"],
+  "modelWorkflow.model_git_repository": "https://github.com/midas-network/bayesian-covid-model-demo.git",
+  "modelWorkflow.model_output_folder": "bayesian-covid-model-demo/scripts/results",
+  "modelWorkflow.model_output_file_types": "[npz,txt,png]",
+  "modelWorkflow.install_model_script": "./scripts/sh/bayesian/install_model.sh",
+  "modelWorkflow.run_model_script": "./scripts/sh/bayesian/run_model.sh",
+  "modelWorkflow.model_runtime_docker": "python:3.6.15-bullseye",
+
+  "modelWorkflow.setup_os_script": "./scripts/sh/setup_os.sh",
+  "modelWorkflow.clone_repository_script": "./scripts/sh/clone_git_repository.sh",
+  "modelWorkflow.copy_cromwell_logs_script": "./scripts/sh/copy_cromwell_logs.sh",
+  "modelWorkflow.copy_model_output_script": "scripts/python/copy_model_output.py"
+}
+
